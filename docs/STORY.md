@@ -160,9 +160,9 @@ static void mpegts_write_pes(AVFormatContext *s, AVStream *st,
 
 So it looks like we will still have to build the ID3 + PRIV frame, but we won't have to worry about the PES frame. ID3 frame and PRIV usage specifications can be found at [id3v2.4.0-structure - ID3.org](https://id3.org/id3v2.4.0-structure) This became more useful when I was able to have DVBinspector and these docs side by side to understand the makeup of an ID3 frame.
 
-You can find the referenced source code for encoding an ID3 PRIV frame at [./experiments/id3enc.c](./experiments/id3enc.c)
+You can find the referenced source code for encoding an ID3 PRIV frame at [./experiments/id3enc.c](/experiments/id3enc.c)
 
-You can also find some reminence of code used in the [experiments folder](./experiments)
+You can also find some reminence of code used in the [experiments folder](/experiments)
 
 It did work... technically. I was able to produce an hls file stream into a directory, I made a simple nginx server to host the folder, and I got video playback. I also got Timed metadata! Alittle... too much. It was spamming the browser causing the tab to crash. It was as if it was spamming the same event over and over. From my admittedly janky code above, I feared it was something wrong with my code, and spent quite a few days trying to debug things. But I had no change in effect. And every time the PES ID3 Metadata frame would only appear once every couple seconds according to DVBinspector. I can't really tell the difference other than maybe the pts timecodes are processed differently? I can't be sure. But I threw in the towel on this idea...
 
