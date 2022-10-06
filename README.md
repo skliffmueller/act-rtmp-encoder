@@ -2,6 +2,10 @@
 
 This is a demonstration of an Amazon IVS and attempting to sync multiple metadata cues in a video stream.
 
+[Check out the produced video](http://act-player-video-archive.s3-website-us-east-1.amazonaws.com/)
+
+Also checkout my pairing project [act-keyboard-player](https://github.com/skliffmueller/act-keyboard-player) Which is the Amazon IVS player, playing the stream.
+
 ## Documents
 
 [Technology Overview](/docs/TECH.md)
