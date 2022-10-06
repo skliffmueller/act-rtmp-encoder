@@ -9,11 +9,16 @@ Also checkout my pairing project [act-keyboard-player](https://github.com/skliff
 ## Documents
 
 [Technology Overview](/docs/TECH.md)
+
 [Story behind this project](/docs/STORY.md)
 
 ## ffmpeg vcpkg patch
 
-This is required, as there is a bug with the socket hanging up on the rtmp connection. In your vcpkg install directory create the following file `<vcpkg_install_dir>/ports/ffmpeg/nonblock-tls.patch`
+The issue is discussed in [this ticket](https://trac.ffmpeg.org/ticket/6471), along with the solution in the comments. Below is an implementation of that solution. 
+
+This is required, as there is a bug with the socket hanging up on the rtmps connection. More specifically the TLS socket layer hangs.
+
+In your vcpkg install directory create the following file `<vcpkg_install_dir>/ports/ffmpeg/nonblock-tls.patch`
 
 In that file place this text, it is a raw diff patch, that will be applied on installation of ffmpeg.
 ```
