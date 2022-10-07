@@ -4,7 +4,11 @@ This is a demonstration of an Amazon IVS and attempting to sync multiple metadat
 
 [Check out the produced video](http://act-player-video-archive.s3-website-us-east-1.amazonaws.com/)
 
-Also checkout my pairing project [act-keyboard-player](https://github.com/skliffmueller/act-keyboard-player) Which is the Amazon IVS player, playing the stream.
+Also checkout my pairing projects
+
+[act-keyboard-player](https://github.com/skliffmueller/act-keyboard-player) Which is the Amazon IVS player, playing the stream.
+
+[Act IVS API](https://github.com/skliffmueller/act-ivs-api) Which generates the list.json file for video lists
 
 ## Documents
 
