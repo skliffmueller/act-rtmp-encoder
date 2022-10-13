@@ -126,7 +126,7 @@ The stream is sending an ID3 metadata encoded buffer with a single PRIV frame, c
 In the ffmpeg mpegts encoder (libavformat/mpegtsenc.c) It does seem like it accepts any packet payload to be written to the stream, and it'll wrap the PES frame around the data for you.
 mpegts_write_packet_internal
 [ffmpeg:libavformat/mpegtsenc.c:1954](https://git.ffmpeg.org/gitweb/ffmpeg.git/blob/refs/heads/release/4.4:/libavformat/mpegtsenc.c#l1954)
-```
+```c
  static int mpegts_write_packet_internal(AVFormatContext *s, AVPacket *pkt)
  {
      ...
@@ -143,7 +143,7 @@ mpegts_write_packet_internal
 ```
 Following the path further into the mpegts_write_pes function, we have some logic
 [ffmpeg:libavformat/mpegtsenc.c:1432](https://git.ffmpeg.org/gitweb/ffmpeg.git/blob/refs/heads/release/4.4:/libavformat/mpegtsenc.c#l1432)
-```
+```c
 static void mpegts_write_pes(AVFormatContext *s, AVStream *st,
                              const uint8_t *payload, int payload_size,
                              int64_t pts, int64_t dts, int key, int stream_id)
